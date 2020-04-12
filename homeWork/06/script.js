@@ -243,9 +243,7 @@ let users = [{name: 'vasya', age: 31, status: false}, {name: 'petya', age: 30, s
 // console.log('We nead',f(1000, 2, 50, 1200),'years');
 
 
-
-
-
+console.log(`test to commit`);
 
 
 
