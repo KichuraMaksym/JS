@@ -333,3 +333,5 @@ function PrinceAlik(name,age,rozmirShkara) {
 
 let Alfred = new PrinceAlik('Alfred',25,30);
 Alfred.poshukPopelushki(bandaPopelushok);
+
+//commit test
