@@ -335,3 +335,4 @@ let Alfred = new PrinceAlik('Alfred',25,30);
 Alfred.poshukPopelushki(bandaPopelushok);
 
 //commit test
+//test 4
