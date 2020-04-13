@@ -433,7 +433,7 @@ let user11 = usersWithAddress.filter(value => value.status == false & value.age 
 
 // -- отфильтровать (оставить) тех у кого номер дома четный
 let user12 = usersWithAddress.filter(value => value.address.number % 2 === 0)
-console.log(user12);
+// console.log(user12);
 
 //
 //
@@ -445,19 +445,75 @@ console.log(user12);
 // Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
 // Власник автомобіля теж має бути обєкт, у якого є поля
 // Імя, вік, стаж водіння.
+let avtomobil = class {
+    constructor(marka, potujnist, name, age, staj, price, produseYear) {
+        this.brand = marka;
+        this.power = potujnist;
+        this.driver = {name: name, age: age, expirience: staj};
+        this.price = price;
+        this.produceYear = produseYear
+    }
+}
 // Створити не менше 7 та не більше 20 машинок.
+
+let car1 = new avtomobil('honda', 100500, 'Jackie Chan', 55, 33, 100500, 2002);
+let car2 = new avtomobil('volvo', 10500, 'Mickey Ruork', 65, 45, 22000, 2020);
+let car3 = new avtomobil('suzuki', 10050, 'Johny Deph', 35, 21, 3000, 2005);
+let car4 = new avtomobil('Tavria', 56, 'Ivan Zadunajskiy', 25, 18, 700, 2007);
+let car5 = new avtomobil('audi', 240, 'Sasha Belij', 15, 17, 15000, 2009);
+let car6 = new avtomobil('subaru', 150, 'Fedor Bonfarchuk', 51, 15, 5400, 1997);
+let car7 = new avtomobil('mistubishi', 190, 'Driver1', 52, 13, 2600, 1989);
+let car8 = new avtomobil('linkoln', 280, 'Driver2', 33, 10, 4000, 2004);
+let car9 = new avtomobil('dodge', 350, 'Driver3', 22, 8, 5200, 2001);
+let car10 = new avtomobil('chevrolet', 90, 'Driver4', 44, 5, 3700, 2002);
+let car11 = new avtomobil('pegeot', 175, 'Driver5', 27, 2, 13300, 2017);
+let car12 = new avtomobil('fiat', 325, 'Driver6', 45, 1, 5000, 2013);
+
 // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
 // На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
 // Для початку вкладіть всі наші створені автомобілі в масив cars.
+let mycars = [];
+mycars.push(car1, car2, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12);
+// console.log(mycars);
 // Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+for (let i = 0; i < mycars.length; i += 2) {
+    const carI = mycars[i];
+    carI.power = carI.power * 1.1;
+    carI.price = carI.price * 1.05
+}
+// console.log(mycars);
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+for (const mycar of mycars) {
+    if (mycar.driver.age > 25 && mycar.driver.expirience < 5) {
+        mycar.driver.expirience = mycar.driver.expirience + 1
+    }
+}
+// console.log(mycars);
 // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+let allPrice = 0;
+for (const mycar of mycars) {
+    allPrice += mycar.price;
+
+}
+console.log(`Zagalna sina vsih mashin stanovit ${allPrice}`)
+
+let allPriceForEach = 0;
+mycars.forEach(value => {
+    allPriceForEach =   allPriceForEach + value.price
+} )
+console.log(allPriceForEach);
 //
 //
 // Задача: дан отсортированный по возрастанию массив целых чисел. Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 // Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
 // Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
-//
+let zadacha = function(array,a){
+
+}
+
+
+
+
 // Пример:
 // Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
 // 1. Key = 1
