@@ -82,7 +82,7 @@
 // Другий параметр визначає кліькіть ячеєк в кожній строці.
 // Третій параметр визначає елемент в який потрібно таблицю додати.
 let tableCreator = function (row, collomn, el) {
-    let elem = document.createElement(el)
+    let target = document.getElementById(el)
     let tbl = document.createElement("table");
     for (let i = 0; i < row; i++) {
         let tr = document.createElement("tr")
@@ -94,11 +94,10 @@ let tableCreator = function (row, collomn, el) {
         }
     }
 
-    document.body.appendChild(elem)
-    elem.appendChild(tbl)
+    target.appendChild(tbl)
 }
 
-tableCreator(2, 3, 'div');
+tableCreator(2, 3, 'target');
 
 // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
