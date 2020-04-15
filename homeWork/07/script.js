@@ -77,27 +77,28 @@
 //     console.log(document.form2.text2.value);
 // }
 
-// - Створити функцію, яка генерує таблицю.
-// Перший аргумент визначає кількість строк.
-// Другий параметр визначає кліькіть ячеєк в кожній строці.
-// Третій параметр визначає елемент в який потрібно таблицю додати.
-let tableCreator = function (row, collomn, el) {
-    let target = document.getElementById(el)
-    let tbl = document.createElement("table");
-    for (let i = 0; i < row; i++) {
-        let tr = document.createElement("tr")
-        tbl.appendChild(tr)
-        for (let j = 0; j < collomn; j++) {
-            let td = document.createElement("td")
-            tr.appendChild(td)
-
-        }
-    }
-
-    target.appendChild(tbl)
-}
-
-tableCreator(2, 3, 'target');
+// // - Створити функцію, яка генерує таблицю.
+// // Перший аргумент визначає кількість строк.
+// // Другий параметр визначає кліькіть ячеєк в кожній строці.
+// // Третій параметр визначає елемент в який потрібно таблицю додати.
+// let tableCreator = function (row, collomn, el) {
+//     let target = document.getElementById(el)
+//     let tbl = document.createElement("table");
+//     for (let i = 0; i < row; i++) {
+//         let tr = document.createElement("tr")
+//         tbl.appendChild(tr)
+//         for (let j = 0; j < collomn; j++) {
+//             let td = document.createElement("td")
+//             tr.appendChild(td)
+//
+//         }
+//     }
+//
+//     target.appendChild(tbl)
+// }
+//
+// tableCreator(2, 3, 'target');
+//
 
 // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
@@ -153,4 +154,13 @@ tableCreator(2, 3, 'target');
 //
 //
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-//
+
+document.onmouseup = function () {
+
+    var selection = window.getSelection();
+
+    console.log(selection.toString());
+    console.log(selection);
+
+}
+
