@@ -168,7 +168,33 @@
 // }
 
 
-// - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+// // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+//
+// let imgArr = ['https://aeroclub.net.ua/content/events/500/300safety-day-img.jpg', 'https://imarket33.com/wp-content/uploads/2019/08/112.0.1-IMG-300x300.jpg', 'https://www.nasa.gov/sites/default/files/files/nasa_insignia_300.jpg'];
+// let carusel = document.createElement("div")
+// document.body.appendChild(carusel);
+// let imgIndex = 0;
+// lBtn = document.createElement("button");
+// let rBtn = document.createElement("button");
+// lBtn.innerText = 'left';
+// rBtn.innerText = 'right';
+// let imgToSee = document.createElement("img");
+// imgToSee.src = imgArr[imgIndex]
+// document.body.appendChild(imgToSee)
+// document.body.appendChild(lBtn);
+// document.body.appendChild(rBtn);
+// lBtn.onclick = function (ev) {
+//     if (imgIndex - 1 < 0) {
+//         imgIndex = imgArr.length - 1
+//     } else imgIndex = imgIndex - 1
+//     imgToSee.src = imgArr[imgIndex]
+// }
+// rBtn.onclick = function (ev) {
+//     if (imgIndex + 1 > imgArr.length -1) {
+//         imgIndex = 0
+//     } else imgIndex = imgIndex + 1
+//     imgToSee.src = imgArr[imgIndex]
+// }
 
 
 // // // Сворити інпут текстового типу.
@@ -255,3 +281,4 @@
 //
 // }
 
+// https://learn.javascript.ru/selection-range
