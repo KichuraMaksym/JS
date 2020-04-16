@@ -44,7 +44,34 @@
 // }
 
 
-// - Создайте меню, которое раскрывается/сворачивается при клике
+// // - Создайте меню, которое раскрывается/сворачивается при клике
+// let ul = document.createElement("ul");
+// ul.innerText = 'show/hide button'
+// let li1 = document.createElement("li");
+// li1.innerText = 'menu1';
+// let li2 = document.createElement("li");
+// li2.innerText = 'menu2';
+// let li3 = document.createElement("li");
+// li3.innerText = 'menu3';
+// ul.appendChild(li1);
+// ul.appendChild(li2);
+// ul.appendChild(li3);
+// document.body.appendChild(ul);
+// li1.style.display = 'none';
+// li2.style.display = 'none';
+// li3.style.display = 'none';
+// ul.onclick = function (ev) {
+//     if (li2.style.display === 'none') {
+//         li2.style.display = 'block'
+//     } else li2.style.display = 'none';
+//     if (li1.style.display === 'none'){
+//         li1.style.display = 'block'
+//     }else li1.style.display = 'none';
+//     if (li3.style.display === 'none'){
+//         li3.style.display = 'block'
+//     }else li3.style.display = 'none'
+//
+// }
 
 
 // // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
@@ -67,8 +94,6 @@
 // }
 
 
-
-
 // // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
 // // Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
@@ -79,6 +104,7 @@
 //     console.log(document.form2.text1.value);
 //     console.log(document.form2.text2.value);
 // }
+
 
 // // - Створити функцію, яка генерує таблицю.
 // // Перший аргумент визначає кількість строк.
@@ -101,14 +127,48 @@
 // }
 //
 // tableCreator(2, 3, 'target');
-//
-// - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
-// При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
-// (Додатковачастина для завдання)
+
+
+// // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+// // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+// // (Додатковачастина для завдання)
+// let inp1 = document.createElement('input');
+// inp1.placeholder = 'row'
+// let inp2 = document.createElement('input');
+// inp2.placeholder = 'cells'
+// let inp3 = document.createElement('input');
+// inp3.placeholder = 'cellValue'
+// let btn = document.createElement("button");
+// btn.innerText = 'Creata Table'
+// document.body.appendChild(inp1);
+// document.body.appendChild(inp2);
+// document.body.appendChild(inp3);
+// document.body.appendChild(btn);
+// btn.onclick = function (ev) {
+//     let row1 = (inp1.value);
+//     let row = parseInt(row1);
+//     let cells1 = (inp2.value);
+//     let cells = parseInt(cells1)
+//     let cellValue = inp3.value;
+//     console.log(row);
+//     console.log(cells)
+//     console.log(cellValue)
+//     let tbl = document.createElement("table");
+//     for (let i = 0; i <row; i++) {
+//         let tr = document.createElement("tr");
+//         tbl.appendChild(tr)
+//         for (let j = 0; j < cells; j++) {
+//             let td = document.createElement("td");
+//             td.style.background = 'red'
+//             td.innerText = cellValue;
+//             tr.appendChild(td)
+//         }
+//     }
+//     document.body.appendChild(tbl)
+// }
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
-
 
 
 // // // Сворити інпут текстового типу.
@@ -131,7 +191,6 @@
 //         }
 //     }
 // }
-
 
 
 // // Сворити інпут текстового типу.
