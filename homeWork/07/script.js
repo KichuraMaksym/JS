@@ -242,7 +242,21 @@
 
 // -- создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
 // При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
-//
+let zagolovki = document.getElementsByTagName('h2')
+const zmist = document.createElement('ul')
+document.body.appendChild(zmist)
+for (let i = 0; i < zagolovki.length; i++) {
+    let ssilka = document.createElement('a')
+    let zagol = document.createElement('li')
+    let yacor = 'yacor' + 1;
+    ssilka.href = '#' + yacor;
+    zagolovki[i].setAttribute('id',yacor)
+    ssilka.innerHTML = zagolovki[i].innerText
+    zagol.appendChild(ssilka)
+    zmist.appendChild(zagol)
+}
+
+
 // -- взять массив пользователей
 // let usersWithAddress = [
 //                 {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
@@ -262,8 +276,11 @@
 // 2й - оставляет старше 29 лет включительно
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
-//
-//
+
+
+
+
+
 //
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
@@ -272,13 +289,21 @@
 
 
 // // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-//
+
 // document.onmouseup = function () {
 //
-//     var selection = window.getSelection();
-//
-//     console.log(selection.toString());
-//
+//     let selection = window.getSelection();
+//     let indexBefore = selection.anchorOffset
+//     let indexAfter = selection.focusOffset;
+//     alert(selection)
+//     alert(`start at ${indexBefore} end at ${indexAfter}`)
+//     let span1 = '<span>';
+//     let span2 = '</span>';
+//     selection.anchorNode
+//     console.log(selection);
+//     console.log(selection.anchorNode);
+//     console.log(selection.focusNode);
 // }
+
 
 // https://learn.javascript.ru/selection-range
