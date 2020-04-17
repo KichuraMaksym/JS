@@ -169,7 +169,9 @@ butn.onclick = function () {
     }
 
 }
-let lastKey = JSON.parse(localStorage.getItem('key')).length - 1
+
+if (localStorage.getItem('key')) {
+    let lastKey = JSON.parse(localStorage.getItem('key')).length - 1
 textA.value = JSON.parse(localStorage.getItem('key'))[lastKey]
 let curentIndex = lastKey
 right.onclick = function () {
@@ -186,6 +188,10 @@ left.onclick = function () {
     } else curentIndex = curentIndex - 1
     textA.value = JSON.parse(localStorage.getItem('key'))[curentIndex]
 }
+
+} else console.log('No data in array ')
+
+
 
 
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
