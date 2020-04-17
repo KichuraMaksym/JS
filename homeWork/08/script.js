@@ -136,12 +136,56 @@
 // chekRb()
 
 
-
 // -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище),
 // затем поредактировать их, затем еще поредактировать и возможно еще.....
 // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
 // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт
 // истории - нажатеи кнопки сохранить).
+let left = document.createElement("img")
+left.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Arrow_Blue_Left_001.svg/200px-Arrow_Blue_Left_001.svg.png'
+left.style.width = '50px'
+document.body.appendChild(left)
+let right = document.createElement("img")
+right.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Arrow_Blue_Right_001.svg/200px-Arrow_Blue_Right_001.svg.png'
+right.style.width = '50px'
+document.body.appendChild(right)
+let br = document.createElement("br")
+document.body.appendChild(br)
+let textA = document.createElement("textarea")
+document.body.appendChild(textA)
+let butn = document.createElement("button");
+butn.innerText = 'Save'
+document.body.appendChild(butn)
+
+butn.onclick = function () {
+    let key = JSON.parse(localStorage.getItem('key'))
+    if (Array.isArray(key) && key != null) {
+        key.push(textA.value);
+        localStorage.setItem('key', JSON.stringify(key))
+    } else {
+        let emptyArr = [];
+        emptyArr.push(textA.value)
+        localStorage.setItem('key', JSON.stringify(emptyArr))
+    }
+
+}
+let lastKey = JSON.parse(localStorage.getItem('key')).length - 1
+textA.value = JSON.parse(localStorage.getItem('key'))[lastKey]
+let curentIndex = lastKey
+right.onclick = function () {
+    if (curentIndex + 1 > lastKey) {
+        curentIndex = 0
+    } else curentIndex = curentIndex + 1
+
+    textA.value = JSON.parse(localStorage.getItem('key'))[curentIndex]
+}
+
+left.onclick = function () {
+    if (curentIndex - 1 < 0) {
+        curentIndex = lastKey
+    } else curentIndex = curentIndex - 1
+    textA.value = JSON.parse(localStorage.getItem('key'))[curentIndex]
+}
 
 
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
